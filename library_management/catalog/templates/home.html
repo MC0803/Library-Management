@@ -1,0 +1,45 @@
+
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<style>
+  .frontpage-container {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* Full viewport height */
+    background: url("{% static 'images/library.png' %}") no-repeat center center;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .overlay-text {
+    position: absolute;
+    color: white;
+    font-size: 3rem;
+    font-weight: bold;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+    z-index: 2;
+  }
+
+  /* Optional: add a dark overlay for better text visibility */
+  .dark-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.4);
+    z-index: 1;
+  }
+</style>
+
+<div class="frontpage-container">
+    <div class="dark-overlay"></div>
+    <div class="overlay-text">A book is a dream you hold in your hand.</div>
+</div>
+{% endblock %}
+
