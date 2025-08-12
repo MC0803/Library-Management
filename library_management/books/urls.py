@@ -13,4 +13,5 @@ urlpatterns = [
     path('logout',views.logout,name='logout'),
     path('return_item',views.return_item,name='return_item'),
     path('history',views.history,name='history'),
+    path('search/', views.search_books, name='search_books'),
 ]

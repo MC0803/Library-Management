@@ -1,5 +1,7 @@
 
 # Importing required libraries
+import requests
+from django.shortcuts import render
 from django.shortcuts import redirect, render
 from .models import Book, IssuedItem
 from django.contrib import messages
@@ -172,3 +174,16 @@ def return_item(request):
     # Return return page with books that are issued to user
     params = {'books':books}
     return render(request,'return_item.html',params)
+
+def search_books(request):
+    query = request.GET.get('q', '')  # get search term from URL param
+    books = []
+
+    if query:
+        url = f'https://openlibrary.org/search.json?q={query}'
+        response = requests.get(url)
+        if response.status_code == 200:
+            data = response.json()
+            books = data.get('docs', [])[:10]  # limit results to 10
+
+    return render(request, 'books/search_results.html', {'books': books, 'query': query})

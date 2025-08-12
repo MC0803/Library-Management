@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Search Books</h2>
+
+<form method="get" action="{% url 'search_books' %}">
+    <input type="text" name="q" value="{{ query }}" placeholder="Search books..." required />
+    <button type="submit">Search</button>
+</form>
+
+{% if books %}
+    <h3>Results for "{{ query }}":</h3>
+    <ul>
+        {% for book in books %}
+            <li>
+                <strong>{{ book.title }}</strong>
+                {% if book.author_name %}
+                    by {{ book.author_name|join:", " }}
+                {% endif %}
+                {% if book.first_publish_year %}
+                    (First published: {{ book.first_publish_year }})
+                {% endif %}
+            </li>
+        {% endfor %}
+    </ul>
+{% elif query %}
+    <p>No results found for "{{ query }}". Try a different search.</p>
+{% endif %}
+{% endblock %}
