@@ -1,0 +1,33 @@
+.home-container {
+  position: relative;
+  height: 100vh; 
+  background: no-repeat center center;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+
+.home-container::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 0;
+}
+
+.home-quote {
+  position: relative;
+  z-index: 1; 
+  color: white;
+  font-size: clamp(1.5rem, 5vw, 2.5rem); 
+  font-weight: 600;
+  text-shadow: 2px 2px 6px rgba(0,0,0,0.7);
+  max-width: 90%;
+  text-align: center;
+  padding: 0 20px;
+  line-height: 1.4;
+} 
+ /* home.css
