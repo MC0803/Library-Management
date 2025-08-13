@@ -1,0 +1,40 @@
+.site-footer {
+  background-color: lab(63.9% 1.91 -45.67); /* nice blue tone */
+  color: #fff;
+  padding: 15px 20px;
+  text-align: center;
+  font-size: 0.8rem;
+  box-shadow: 0 -2px 5px rgba(0,0,0,0.15);
+  margin-top: 0; /* space above footer */
+}
+
+.site-footer a {
+  color: #fff;
+  text-decoration: none;
+  margin: 0 5px;
+}
+
+.site-footer a:hover {
+  text-decoration: underline;
+}
+
+.footer-nav {
+  margin-bottom: 8px;
+}
+
+.footer-contact span {
+  margin: 0 8px;
+}
+.navbar{
+    background-color: lab(83.99% -37.71 -16.39) !important;
+}
+.navbar .nav-link {
+  color: lab(5.22% -0.37 -6.12) !important;
+
+}
+.navbar .nav-link:hover {
+  color: lab(69.7% -1.47 -33.75)  !important;
+}
+.navbar-brand {
+  color: lab(5.22% -0.37 -6.12) !important;
+}
